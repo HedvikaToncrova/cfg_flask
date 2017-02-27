@@ -32,4 +32,4 @@ def send_simple_message(email_address):
               "text": "Testing some Mailgun awesomness!"})
 
 
-app.run(debug=True)
+app.run()
