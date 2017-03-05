@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template, request
 import requests
 
-app = Flask("MyApp")
+app = Flask(__name__)
 
 @app.route('/')
 @app.route('/<name>')
@@ -32,4 +32,6 @@ def send_simple_message(email_address):
               "text": "Testing some Mailgun awesomness!"})
 
 
-app.run(host='0.0.0.0')
+if __name__ == '__main__':
+	print "app = ", app
+	app.run(host='0.0.0.0')
